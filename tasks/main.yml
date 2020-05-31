@@ -6,7 +6,7 @@
 - name: Download Calibre {{ calibre_version }}
   get_url:
     url: https://download.calibre-ebook.com/{{ calibre_version }}/calibre-{{ calibre_version }}-x86_64.txz
-    checksum: "sha256:{{ calibre_sha256 }}"
+    checksum: "{{ calibre_checksum }}"
     dest: /tmp/calibre-{{ calibre_version }}.txz
   when: not calibre_bin.stat.exists
 - name: Create Calibre directory
