@@ -11,7 +11,7 @@ galaxy_info:
     - focal
   - name: Debian
     versions:
-    - buster
+    - bullseye
   galaxy_tags:
     - ebook
     - epub
