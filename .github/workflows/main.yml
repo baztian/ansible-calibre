@@ -28,7 +28,7 @@ jobs:
         distro:
           - ubuntu2004
           - ubuntu1804
-          - debian10
+          - debian11
     steps:
       - uses: actions/checkout@v2
       - name: molecule
