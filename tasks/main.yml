@@ -13,6 +13,7 @@
   file:
     path: /opt/calibre-{{ calibre_version }}
     state: directory
+    mode: 0755
 - name: Unarchive Calibre {{ calibre_version }}
   unarchive:
     src: /tmp/calibre-{{ calibre_version }}.txz
@@ -24,16 +25,20 @@
     src: "calibre-{{ calibre_version }}"
     dest: "/opt/calibre"
     state: link
+    mode: 0755
 - name: Symlink Calibre binary
   file:
     src: "/opt/calibre/calibre"
     dest: "/usr/local/bin/calibre"
     state: link
+    mode: 0755
 - name: Create launcher directory
   file:
     path: /usr/local/share/applications
     state: directory
+    mode: 0755
 - name: Copy Calibre desktop launcher
   copy:
     src: calibre.desktop
     dest: /usr/local/share/applications/calibre.desktop
+    mode: 0644
